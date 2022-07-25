@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".detailMovie.Detailmovie">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:transitionName="photo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1.5:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.079"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvTitleMovie"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:transitionName="name"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:text="Title"/>
+
+    <TextView
+        android:id="@+id/tvReleaseDate"
+        android:layout_width="247dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:transitionName="date"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitleMovie"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleMovie"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleMovie"
+        tools:text="Mon, 21 April 2022" />
+
+    <TextView
+        android:id="@+id/tvPopularity"
+        android:layout_width="222dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:transitionName="desc"
+        app:layout_constraintEnd_toEndOf="@+id/tvTitleMovie"
+        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintStart_toStartOf="@+id/tvTitleMovie"
+        app:layout_constraintTop_toBottomOf="@+id/tvReleaseDate"
+        tools:text="Anabul makan banyak " />
+
+    <TextView
+        android:id="@+id/tvOverview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+
+        android:transitionName="name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPopularity"
+        tools:text="OverviewFilm " />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/favoriteAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.059"
+        app:srcCompat="@drawable/ic_not_favorite" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/popular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/popularitas"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Sinopsis"
+        app:layout_constraintEnd_toStartOf="@+id/tvPopularity"
+        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReleaseDate"
+        app:layout_constraintVertical_bias="0.421" />
+
+    <TextView
+        android:id="@+id/Sinopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold"
+        android:text="@string/sinopsis_film"
+        app:layout_constraintBottom_toTopOf="@+id/tvOverview"
+        app:layout_constraintEnd_toStartOf="@+id/tvPopularity"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

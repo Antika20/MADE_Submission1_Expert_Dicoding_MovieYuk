@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MovieYuk</string>
+    <string name="Search" />
+    <string name="insertToMovie">Movie %1s has been added successfully</string>
+    <string name="deleteMovie">Movie %1s has been deleted successfully</string>
+    <string name="detail_movie">Detail movie %1s</string>
+    <string name="movie_favorite">Movie Favorite</string>
+    <string name="gambar_content">Gambar Content</string>
+    <string name="tambah_favorite" />
+    <string name="title_favorite">favorite</string>
+    <string name="popular">popular</string>
+    <string name="popularitas">Popularitas</string>
+    <string name="sinopsis_film">Sinopsis Film</string>
+</resources>

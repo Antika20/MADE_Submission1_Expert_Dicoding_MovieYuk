@@ -1,0 +1,74 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+apply from: '../shared_dependencies.gradle'
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 26
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+
+    // room
+    def room_version = "2.4.2"
+    api  "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+    api  "androidx.room:room-ktx:$room_version"
+
+    // Retrofit
+    def versionRetrofit = "2.9.0"
+    api "com.squareup.retrofit2:retrofit:$versionRetrofit"
+    api "com.squareup.retrofit2:converter-gson:$versionRetrofit"
+    def logging_interceptor_version = "5.0.0-alpha.6"
+    api  "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+
+    // Coroutine Flow
+    def kotlin_coroutines_version = "1.6.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
+
+    // LiveData Version
+    def lifecycle_version = "2.4.1"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    def activity_ktx_version = "1.4.0"
+    api "androidx.activity:activity-ktx:$activity_ktx_version"
+
+    def fragment_ktx_version = "1.4.1"
+    api "androidx.fragment:fragment-ktx:$fragment_ktx_version"
+
+}
